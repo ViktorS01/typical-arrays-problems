@@ -1,22 +1,9 @@
-function max (arr){
-  if ( arr === undefined || arr.length === 0){
+exports.min = function min (array) {
+  if ( array === undefined || array.length === 0){
     return 0;
   }
-  let max = arr[0];
-  for (let v of arr){
-    if (max <= v){
-      max = v;
-    }
-  }
-  return max;
-}
-
-function min (arr){
-  if ( arr === undefined || arr.length === 0){
-    return 0;
-  }
-  let min = arr[0];
-  for (let v of arr){
+  let min = array[0];
+  for (let v of array){
     if (min >= v){
       min = v;
     }
@@ -24,13 +11,26 @@ function min (arr){
   return min;
 }
 
-function avg (arr){
-  if ( arr === undefined || arr.length === 0){
+exports.max = function max (array) {
+  if ( array === undefined || array.length === 0){
+    return 0;
+  }
+  let max = array[0];
+  for (let v of array){
+    if (max <= v){
+      max = v;
+    }
+  }
+  return max;
+}
+
+exports.avg = function avg (array) {
+  if ( array === undefined || array.length === 0){
     return 0;
   }
   let res = 0;
-  for (let v of arr){
+  for (let v of array){
     res += v;
   }
-  return res / arr.length;
+  return res / array.length;
 }
